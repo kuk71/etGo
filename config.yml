@@ -1,0 +1,18 @@
+server:
+  port: 8080 # порт который слушает Go сервер
+  domen: localhost # доменное имя на котором работает система
+  protocol: http #http или https
+db:
+  driver: mysql
+  host: localhost
+  port: 3306
+  dbName:
+  user:
+  password:
+  charset: utf8
+site:
+  confirmEmail: # адрес электоронной почты (он же логин к smtp) с которого буду отправляться письма на подтверждение Email
+  confirmEmailPassword: # пароль к smptp сервису
+  confirmEmailHost: smtp.yandex.ru:465 # smtp host и порт
+  confirmAttempts: 3 # число допустимых ошибок подтверждения
+  confirmWaitingTimeSec: 86400 # через сколько секунд код подтверждения будет удален как протухший

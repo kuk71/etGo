@@ -1,0 +1,29 @@
+<h1>Страница регистрации</h1>
+{{if .IsTotalErr}}
+<p>{{ .TotalErr}}</p>
+{{end}}
+
+<FORM method="POST" xmlns="http://www.w3.org/1999/html">
+    <p>Электронная почта:</p>
+    {{if .IsEmailErr}}
+    <p>{{ .User.EmailErr}}</p>
+    {{end}}
+    <p><input type="text" name="mail" value="{{.User.Email}}"></p>
+
+    <p>Пароль:</p>
+    {{if .IsPassErr}}
+    <p>{{ .User.PasswordErr}}</p>
+    {{end}}
+    <p><input type="password" name="pass" value="{{.User.Password}}"></p>
+
+    <p>Повторите пароль:</p>
+    {{if .IsPassRplErr}}
+    <p>{{ .User.PasswordReplaceErr}}</p>
+    {{end}}
+    <p><input type="password" name="passRpl" value="{{.User.PasswordReplace}}"></p>
+
+    <p><input type="submit" name="send" value="Отправить"></p>
+</FORM>
+
+
+
